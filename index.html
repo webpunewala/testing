@@ -32,19 +32,37 @@
       border: 5px solid white;
       border-radius: 10px;
       box-shadow: 0 0 20px #fff;
+      display: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <div class="content">
     <h1>Welcome to My Landing Page</h1>
-    <p>Watch my introduction video below</p>
+    <p>Click below to watch my video with sound</p>
 
-    <!-- Replace "myvideo.mp4" with the correct path or URL to your video -->
-    <video autoplay muted loop playsinline>
-      <source src="myvideo.mp4" type="video/mp4">
+    <button onclick="playVideo()">▶️ Start Video</button>
+
+    <br><br>
+    <video id="introVideo" controls autoplay>
+      <source src="intro.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
+
+  <script>
+    function playVideo() {
+      const video = document.getElementById('introVideo');
+      video.style.display = 'block';
+      video.play();
+    }
+  </script>
 </body>
 </html>
